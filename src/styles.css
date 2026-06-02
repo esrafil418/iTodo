@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@import "./assets/fonts/Vazirmatn.css";
+
+@theme {
+  --font-main: "Vazirmatn", "sans-serif";
+}
