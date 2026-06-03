@@ -28,13 +28,13 @@ export function BottomBar() {
 			</div>
 
 			<Link
-				to="/"
+				to="/tasks"
 				activeProps={{ className: "text-stone-900 font-bold" }}
 				className="h-full flex-1 flex flex-col gap-1 items-center justify-center text-xs"
 			>
 				<CheckSquareIcon
 					size={24}
-					weight={location.pathname === "/" ? "fill" : "regular"}
+					weight={location.pathname === "/tasks" ? "fill" : "regular"}
 				/>
 				<span>کارها</span>
 			</Link>
