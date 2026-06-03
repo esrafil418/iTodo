@@ -1,9 +1,14 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Navigate } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 export const Route = createFileRoute("/")({
-	component: Index,
+  component: Index,
 });
 
 function Index() {
-	return null;
+  const value = localStorage.getItem("started");
+  const started: boolean = value ? JSON.parse(value) : false;
+  const destination = started ? "/home" : "/intro";
+
+  return <Navigate to={destination} />;
 }
