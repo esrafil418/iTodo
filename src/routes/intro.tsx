@@ -15,7 +15,7 @@ function RouteComponent() {
   };
   return (
     <div className="flex flex-col p-4 gap-8 justify-center items-center h-dvh">
-      <img src="\images\large-logo.svg" alt="Page-logo" className="h-75" />
+      <img src="\images\the-trees.svg" alt="Page-logo" className="h-75" />
 
       <div className="flex flex-col gap-2 justify-center items-center">
         <img src="\images\small-logo-2.svg" alt="small-logo" />
