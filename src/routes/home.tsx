@@ -38,7 +38,7 @@ function Main() {
 
   const handleDidItBtnClick = () => {
     if (!starredTaskId) return;
-    setStarredTaskId(null);
+    setStarredTaskId("");
     toggleTaskCompleted(starredTaskId);
     setIsCelebration(true);
   };

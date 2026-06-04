@@ -75,7 +75,7 @@ function TaskItem({ id, title, isCompleted }: TaskItemProps) {
 
   const handleCompletedBtnClick = () => toggleTaskCompleted(id);
   const handleStarredBtnClick = () =>
-    setStarredTaskId(isThisTaskStarred ? null : id);
+    setStarredTaskId(isThisTaskStarred ? "" : id);
   return (
     <div
       key={id}
