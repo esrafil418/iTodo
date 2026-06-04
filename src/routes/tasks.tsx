@@ -11,8 +11,6 @@ export const Route = createFileRoute("/tasks")({
 });
 
 function RouteComponent() {
-  //   const [tasks, setTasks] = useLocalStorage<Task[]>("tasks", [...sampleTasks]);
-
   return (
     <div className="flex flex-col h-dvh">
       <TopBar title="کارها" />
