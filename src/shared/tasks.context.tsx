@@ -114,8 +114,9 @@ export const sampleTasks: Task[] = [
 type ITasksContext = {
   tasks: Task[];
   setTasks: (tasks: Task[]) => void;
-  toggleTaskCompleted: (taskId: Task["id"]) => void;
-  creatTask: (taskTitle: Task["title"]) => void;
+  toggleTaskCompleted: (id: Task["id"]) => void;
+  creatTask: (title: Task["title"]) => void;
+  editTask: (id: Task["id"], title: Task["title"]) => void;
 };
 
 export const TasksContext = createContext<ITasksContext>({
@@ -123,6 +124,7 @@ export const TasksContext = createContext<ITasksContext>({
   setTasks: () => {},
   toggleTaskCompleted: () => {},
   creatTask: () => {},
+  editTask: () => {},
 });
 
 export function TasksProvider({ children }: { children: React.ReactNode }) {
@@ -147,9 +149,21 @@ export function TasksProvider({ children }: { children: React.ReactNode }) {
     setTasks(newTasks);
   };
 
+  const editTask = (id: Task["id"], title: Task["title"]) => {
+    const editedTasks = [...tasks].map((task) => {
+      if (task.id !== id) return task;
+
+      return {
+        ...task,
+        title,
+      };
+    });
+    setTasks(editedTasks);
+  };
+
   return (
     <TasksContext.Provider
-      value={{ tasks, setTasks, creatTask, toggleTaskCompleted }}
+      value={{ tasks, setTasks, creatTask, toggleTaskCompleted, editTask }}
     >
       {children}
     </TasksContext.Provider>
