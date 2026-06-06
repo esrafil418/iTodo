@@ -6,6 +6,7 @@ import { Switch } from "../../components/Switch";
 import { TopBar } from "../../components/TobBar";
 import { type Task, TasksContext } from "../../shared/tasks.context";
 import { EditTaskSheet } from "./-editTaskSheet";
+import { DeleteTaskSheet } from "./-deleteTaskSheet";
 
 type TaskDetailsSheetProps = {
   id: Task["id"];
@@ -22,14 +23,20 @@ export function TaskDetailsSheet({
 }: TaskDetailsSheetProps) {
   const { toggleTaskCompleted } = use(TasksContext);
   const [isEditMode, setIsEditMod] = useState(false);
+  const [isDeleteMode, setIsDeleteEditMod] = useState(false);
 
   const openEditSheet = () => setIsEditMod(true);
   const closeEditSheet = () => setIsEditMod(false);
+  const openDeleteSheet = () => setIsDeleteEditMod(true);
+  const closeDeleteSheet = () => setIsDeleteEditMod(false);
   const handleToggleClick = () => toggleTaskCompleted(id);
   return (
     <>
       {isEditMode && (
         <EditTaskSheet onClose={closeEditSheet} taskId={id} title={title} />
+      )}
+      {isDeleteMode && (
+        <DeleteTaskSheet onClose={closeDeleteSheet} taskId={id} />
       )}
 
       <BottomSheet
@@ -51,7 +58,12 @@ export function TaskDetailsSheet({
             IconEnd={PencilSimpleIcon}
             onClick={openEditSheet}
           />
-          <Btn title="حذف" color="danger" IconEnd={TrashIcon} />
+          <Btn
+            title="حذف"
+            color="danger"
+            IconEnd={TrashIcon}
+            onClick={openDeleteSheet}
+          />
         </div>
       </BottomSheet>
     </>

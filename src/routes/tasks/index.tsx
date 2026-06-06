@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { BottomBar } from "../../components/BottomBar";
 import { TopBar } from "../../components/TobBar";
 import { TasksList } from "./-tasksList";
-import { TaskItem } from "./-taskItem";
-import { TaskDetailsSheet } from "./-taskDetailsSheet";
 
 export const Route = createFileRoute("/tasks/")({
   component: RouteComponent,
