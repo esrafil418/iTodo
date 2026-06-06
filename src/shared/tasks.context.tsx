@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import { v4 as uuidv4 } from "uuid";

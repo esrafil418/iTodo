@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { CaretLeftIcon } from "@phosphor-icons/react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { Btn } from "../components/Btn";
