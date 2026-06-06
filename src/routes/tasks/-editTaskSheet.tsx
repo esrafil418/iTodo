@@ -1,4 +1,4 @@
-import { PencilSimpleIcon, PlusCircleIcon } from "@phosphor-icons/react";
+import { PencilSimpleIcon } from "@phosphor-icons/react";
 import { use, useState } from "react";
 import { Btn } from "../../components/Btn";
 import { Input } from "../../components/Input";

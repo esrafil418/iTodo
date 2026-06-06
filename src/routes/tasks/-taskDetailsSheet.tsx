@@ -47,7 +47,6 @@ export function TaskDetailsSheet({
             <Switch readOnly checked={isCompleted} />
           </button>
           <Btn
-            disabled
             title="ویرایش"
             IconEnd={PencilSimpleIcon}
             onClick={openEditSheet}

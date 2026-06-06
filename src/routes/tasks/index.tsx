@@ -22,7 +22,3 @@ function RouteComponent() {
 }
 
 <TasksList />;
-
-<TaskItem />;
-
-<TaskDetailsSheet />;
