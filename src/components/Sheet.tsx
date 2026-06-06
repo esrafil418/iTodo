@@ -9,7 +9,7 @@ type BottomSheetProps = {
 
 export function BottomSheet({ onClose, topBar, children, className }: BottomSheetProps) {
   return (
-    <div className={`flex flex-col inset-0 w-full h-dvh fixed bg-black/50 ${className}`}>
+    <div className={`flex flex-col inset-0 w-full h-dvh fixed bg-black/50 ${className} max-w-120 mx-auto`}>
       <button
         type="button"
         className="bg-blue-800/10 flex-1 w-full cursor-pointer"
