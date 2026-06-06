@@ -1,18 +1,22 @@
-import { createContext, useState } from "react";
-import { sampleTasks, type Task } from "./tasks.context";
+import { createContext } from "react";
+import type { Task } from "./tasks.context";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 type IStarredContext = {
-  starredTaskId: Task["id"] | null;
-  setStarredTaskId: (tasks: Task["id"] | null) => void;
+  starredTaskId: Task["id"] | "";
+  setStarredTaskId: (tasks: Task["id"] | "") => void;
 };
 
 export const StarredContext = createContext<IStarredContext>({
-  starredTaskId: null,
+  starredTaskId: "",
   setStarredTaskId: () => {},
 });
 
 export function StarredProvider({ children }: { children: React.ReactNode }) {
-  const [starredTaskId, setStarredTaskId] = useState<Task["id"] | null>(null);
+  const [starredTaskId, setStarredTaskId] = useLocalStorage<Task["id"]>(
+    "starred-task-id",
+    "",
+  );
 
   return (
     <StarredContext.Provider value={{ starredTaskId, setStarredTaskId }}>

@@ -10,6 +10,7 @@ import { TopBar } from "../components/TobBar";
 import { use, useState } from "react";
 import { StarredContext } from "../shared/star.context";
 import { TasksContext, type Task } from "../shared/tasks.context";
+import { generateCelebrationRandomMessage, generateInspiringRandomMessage } from "../shared/randomMessages";
 
 export const Route = createFileRoute("/home")({
   component: RouteComponent,
@@ -38,7 +39,7 @@ function Main() {
 
   const handleDidItBtnClick = () => {
     if (!starredTaskId) return;
-    setStarredTaskId(null);
+    setStarredTaskId("");
     toggleTaskCompleted(starredTaskId);
     setIsCelebration(true);
   };
@@ -50,7 +51,7 @@ function Main() {
   return starredTaskId ? (
     <main className="flex flex-col p-4 gap-8 justify-center items-center flex-1 text-center">
       <p className="font-bold text-stone-900 text-center">
-        انجامش بده، کاری نداره
+        {generateInspiringRandomMessage()}
       </p>
       <p className="font-black text-3xl text-stone-900">{starredTask.title}</p>
       <Btn
@@ -89,7 +90,7 @@ function CelebrationContent({ onContinueBtnClick }: CelebrationContentProps) {
     <main className="flex flex-col p-4 gap-8 justify-center items-center flex-1">
       <img src="\images\celebration.svg" alt="Page-logo" className="h-75" />
       <p className="font-black text-stone-900 text-center text-3xl">
-        آفرین به تو
+        {generateCelebrationRandomMessage()}
       </p>
 
       <Btn
