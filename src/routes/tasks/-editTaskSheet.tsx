@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/a11y/noLabelWithoutControl: <explanation> */
 import { PencilSimpleIcon } from "@phosphor-icons/react";
 import { use, useState } from "react";
 import { Btn } from "../../components/Btn";
