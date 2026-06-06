@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext } from "react";
 import type { Task } from "./tasks.context";
 import useLocalStorage from "../hooks/useLocalStorage";
